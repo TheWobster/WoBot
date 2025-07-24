@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WoBot</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/header_footer_nav.css">
+    <link rel="stylesheet" href="../styles/chart_leafbot.css">
+    <link rel="stylesheet" href="../styles/slicknav.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../js/jquery.slicknav.js"></script>
+</head>
+<header>
+    <nav>
+        <ul id="menu">
+            <li><a href="../index.html">Home</a></li>
+             <li><a href="/pages/chart_leafbot.html">Chart Leafbot</a></li>
+            <li><a href="/pages/close_bids.html">Close Bids</a></li>        
+            <li><a href="/pages/chart_bids.html">Chart Bids</a></li>
+            <li><a href="/pages/chart_voa5.html">Chart VoA 5*</a></li>
+            <li><a href="/pages/monthly_transfer.html">Monthly Transfer</a></li>
+        </ul>
+    </nav>
+</header>
+<script>
+    $(document).ready(function(){
+        $('#menu').slicknav({
+        prependTo: 'header'
+        });
+
+        $('#menu').hide();
+        $('nav').hide();
+    });
+</script>
+<main>
+    <h1>WoBot</h1>
+    <div id="animated_line_title"></div>
+    <h2 id="page_name">Chart Leafbot</h2>
+    <body>
+        <div id="animated_line"></div>
+        <div id="instructions_show_hide">
+            <h2>How to use:</h2>
+            <p>(click for instructions)</p>
+        </div>
+        <div id="instructions">
+            <h3>1. Use command "=charter" in Command channel in Dawn Endgame Bids server</h3>
+            <h3>2. Click & drag, highlight all bids to be charted from Leafbot</h3>
+            <h3>3. Copy & paste bids to text area</h3>
+            <h3>4. Click chart button for VKP or Non-VKP bids</h3>
+            <h3>5. Use "Copy next/previous bids" button to enter into bot</h3>
+            <h3>6. Input all Non-VKP bids into Jellobot via "closed-bids" channel in Dawn Endgame Bids server</h3>
+            <h3>7. Input all VKP bids into Chatpate via "chatpate-input" channel in Dawn server</h3>
+        </div>
+        <div id="output_group">
+            <div id="console_log">
+                <h4>Logs:</h4>
+                <textarea name="console_log" id="console_log_textarea"></textarea>
+            </div>
+            <div id="chart_area">
+                <textarea name="input_text" id="input_text"></textarea>
+            </div>
+        </div>
+        <div id="controls_group">
+            <div id="buttons_chart_close">
+                <button type="button" id="chart_non_vkp" class="control">Chart bids (Non-VKP)</button>
+                <button type="button" id="chart_vkp" class="control">Chart bids (VKP)</button>
+            </div>
+            <div id="buttons_copy">
+                <button type="button" id="copy_previous" class="control">Copy Previous Bid</button>
+                <button type="button" id="copy_next" class="control">Copy Next Bid</button>
+            </div>
+            <div id="buttons_undo_redo">
+                <button type="button" id="undo" class="control">Undo</button>
+                <button type="button" id="redo" class="control">Redo</button>
+                <button type="reset" id="clear" class="control">Clear</button>
+            </div>
+        </div>
+    </body>
+    <footer>
+        <p>&copy;TheWobster - Dawn of Arawn   |     Contact: doctawhitewob2@gmail.com</p>
+    </footer>
+</main>
+    <script src="../js/tools.js"></script>
+    <script src="../js/chart_leafbot.js"></script>
+</html>

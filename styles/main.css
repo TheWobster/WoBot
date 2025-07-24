@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Quicksand:wght@300..700&display=swap');
+
+main {
+    display: block;
+    margin: auto;
+}
+
+body{
+    font-family: 'Quicksand' ,'Gill Sans', 'Gill Sans MT', sans-serif;
+    color: white !important; 
+    margin: 0;
+    padding: 0;
+    background-color: rgb(59, 45, 45);
+    z-index: -1;
+}
+
+
+
+h1, #page_name{
+    font-family: 'Michroma', 'Gill Sans', 'sans-serif';
+    font-size: 250%;
+    font-weight: 700;
+    color: rgb(218, 218, 132);
+    text-shadow: 0 0 10px rgb(138, 137, 134);
+}
+
+#page_name{
+    font-size: 200%;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+
+/*Instructions*/
+#instructions{
+    display: none;
+    margin: 1.3vh 15vw 1.3vh 20vw ;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+h2{
+    align-items: center;
+    margin-bottom: 0;
+}
+
+p{
+    text-align: center;
+    margin: 0;
+}
+
+h3{
+    margin: 5px;
+}
+
+h4{
+    margin: 5px;
+    text-align: center;
+}
+/*Output Area*/
+#output_group{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#input_text{
+    display: flex;
+    align-items: center;
+    background-color: rgb(77, 68, 68);
+
+}
+
+#console_log{
+    margin-top: 2vh;
+}
+
+#console_log_textarea {
+    background-color: rgb(77, 68, 68);
+    font-size: 90%;
+    width: clamp(15vw, 40vw, 60vw);
+    height: clamp(2vh, 5vh, 10vh);
+}
+
+textarea, button{
+    color: white;
+}
+
+#input_text{
+    font-size: 130%;
+    width: clamp(40vw, 60vw, 70vw);
+    height: clamp(30vh, 40vh, 40vh);
+    
+}
+
+.control{
+    background-color: rgb(77, 68, 68);
+    margin: .5em;
+    padding: .8em;
+    font-size: 1rem;
+
+}
+
+#controls_group{
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+#button_clear{
+    margin-top: auto;
+}
+#buttons_chart_close, #buttons_copy, #buttons_undo_redo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    font-size: 80%;
+}
+
+/*Index css */
+#category_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#category_container ul{
+    padding: 0;
+}
+
+#category_container ul li {
+    list-style-type: none;
+    border: 5px solid black;
+    border-radius: 20px 20px;
+    text-align: center;
+    margin: 2em;
+    box-shadow: 0px 0px 20px beige;
+}
+
+#category_container ul li a{
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    margin: 2em;
+    font-size: 140%;
+    font-style: bold;
+    text-align: center;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 2em;
+    border-radius: 20px 20px;
+   
+}
+#category_container ul li:hover{
+
+    box-shadow: 0px 0px 80px  black;
+    border-color: white;
+}
+
+@media (max-width: 820px) {
+
+    #input_text{
+    width: clamp(40vw, 80vw, 90vw);
+    }
+}
