@@ -46,6 +46,10 @@ header nav ul li a:hover{
     color: rgb(222, 222, 152);
 }
 
+nav{
+    display: none;
+}
+
 #animated_line_title{
     width: 100%;
     border-bottom: 5px solid white;
