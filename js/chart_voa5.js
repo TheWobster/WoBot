@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", () =>{
 });
 
 async function chartVkp() {
+
+    bidLineCounter = 0;
     pushToStackUndo();
     const inputData = getElement("#input_text").value;
 
