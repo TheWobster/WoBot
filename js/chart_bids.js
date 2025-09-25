@@ -60,7 +60,7 @@ async function chartVkp() {
                             // prepend =addloot if needed                   
                             .replace(/^([^\-=])/, "=addloot $1")          
                             // keep up to point value     
-                            .replace(/([0-9]+)\s*(akp|btkp|ktkp|tkp)\b.*$/, "$1 $2") 
+                            .replace(/([0-9]+)\s*(akp|btkp|dkp|vkp)\b.*$/, "$1 $2") 
                             .trim();
 
                             
@@ -133,7 +133,7 @@ async function chartNonVkp(){
                             // if no dash or =, prepend
                             .replace(/^([^\-=])/, "=close $1")       
                             // keep up to '100 akp', remove the rest        
-                            .replace(/([0-9]+)\s*(akp|btkp|ktkp|tkp)\b.*$/, "$1 $2")  
+                            .replace(/([0-9]+)\s*(akp|btkp|vkp|dkp)\b.*$/, "$1 $2")  
                             .trim();
 
 

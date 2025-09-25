@@ -19,7 +19,7 @@ function chartNonVkp(){
 
     pushToStackUndo();
     const inputData = getElement("#input_text").value;
-
+    let lineCount = 0;
     let results;
     let isDataBefore = inputData;
     let isDataAfter = "";
@@ -36,12 +36,14 @@ function chartNonVkp(){
             if(trimmed !== null && trimmed !== "" && trimmed.includes("=close")){
                 //add valid line to array
                 validLines.push(trimmed);
+                lineCount++;
             }
         });
 
         results = validLines;
         getElement("#input_text").value = results.join('\n');
         isDataAfter = results;
+        console.log("Lines charted: " + lineCount);
     }else{
         console.log("No input data");
     }
@@ -51,7 +53,7 @@ function chartVkp(){
 
     pushToStackUndo();
     const inputData = getElement("#input_text").value;
-
+    let lineCount = 0;
     let results;
     let isDataBefore = inputData;
     let isDataAfter = "";
@@ -69,12 +71,14 @@ function chartVkp(){
             if(trimmed !== null && trimmed !== "" && trimmed.includes("=addloot")){
                 //add valid line to array
                 validLines.push(trimmed);
+                lineCount++;
             }
         });
 
         results = validLines;
         getElement("#input_text").value = results.join('\n');
         isDataAfter = results;
+        console.log("Lines charted: " + lineCount);
     }else{
         console.log("No input data");
     }
