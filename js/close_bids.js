@@ -196,6 +196,8 @@ async function closeAll(){
     let isDataBefore = inputData;
     let isDataAfter = "";
     let lastLine;
+    let lineCount = 0;
+
     
 
     if(isDataBefore != ""){
@@ -265,7 +267,7 @@ async function closeAll(){
                         if (matchesKeyword) {
                             
                             const lineMatch = `- ${trimmed.trim()}`;
-
+                            lineCount++;
                             validLines.push(lineMatch);
                         }
                     }
@@ -280,6 +282,7 @@ async function closeAll(){
             getElement("#input_text").value = results.join('\n');
             isDataAfter = results;
             console.log("Charted!");
+            console.log("Lines charted: " + lineCount);
 
         }catch (err){
             console.error("Error:", err);
