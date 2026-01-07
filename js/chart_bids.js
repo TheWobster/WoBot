@@ -3,7 +3,8 @@
 
 //const getElement = (selector) => document.querySelector(selector);
 //const errorMessage = getElement("#error");
-
+ 
+let lineCount = 0;
 
 document.addEventListener("DOMContentLoaded", () =>{
 
@@ -17,6 +18,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 async function chartVkp() {
 
     bidLineCounter = 0;
+    lineCount = 0;
     pushToStackUndo();
     const inputData = getElement("#input_text").value;
 
@@ -66,6 +68,7 @@ async function chartVkp() {
 
                             
                         validLines.push(equalsClose);
+                        lineCount++;
                     }
                     
                 }
@@ -75,6 +78,7 @@ async function chartVkp() {
             getElement("#input_text").value = results.join('\n');
             isDataAfter = results;
             console.log("Charted!");
+            console.log("Total lines charted: " + lineCount);
 
         } catch (err) {
             console.error("Error:", err);
@@ -88,6 +92,7 @@ async function chartVkp() {
 async function chartNonVkp(){
 
     bidLineCounter = 0;
+    lineCount = 0;
     pushToStackUndo();
     const inputData = getElement("#input_text").value;
 
@@ -130,6 +135,7 @@ async function chartNonVkp(){
                     if (matchesKeyword && hasKpType ) {
         
                         const equalsClose = trimmed
+                            .split('<')[0]  // remove after <
                              // replace leading dash
                             .replace(/^-\s*/, "=close ")                     
                             // if no dash or =, prepend
@@ -140,6 +146,7 @@ async function chartNonVkp(){
 
 
                         validLines.push(equalsClose);
+                        lineCount++;
                     }
                 }
             });
@@ -149,7 +156,7 @@ async function chartNonVkp(){
             getElement("#input_text").value = results.join('\n');
             isDataAfter = results;
             console.log("Charted!");
-
+            console.log("Total lines charted: " + lineCount);
         }catch (err){
         console.error("Error:", err);
         }
